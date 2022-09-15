@@ -13,5 +13,4 @@ while [[ $success -lt 1 ]]; do
     echo -ne "$(randcolor 150 20)."
 done
 echo
-echo "$article" >> result.txt
 echo -e "$(randcolor 180 20)$article"
