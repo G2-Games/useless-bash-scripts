@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source randcolor.sh
-
 round () {
     printf "%.${2:-0}f" "$1"
 }
@@ -22,12 +20,6 @@ rainbow () {
     fi
 
     while [[ $x -lt $(echo "255/$scale" | bc) ]]; do
-
-        #cr=$(echo "-sqrt($x^2)+255" | bc)
-        #cg=$(echo "-sqrt(($x-85)^2)+255" | bc)
-        #cb=$(echo "-sqrt(($x-170)^2)+255" | bc)
-
-        #divisorf=$(echo "($divisor/$scale)" | bc)
         divisorf="$(calc $divisor/$scale)"
 
         cr=$(echo  "(-(($x-(020/$scale))^2)/$(calc $divisorf/$scale))+255" | bc)
