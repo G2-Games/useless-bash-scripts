@@ -11,6 +11,8 @@ rainbow () {
     divisor=16
     x=0
 
+    final=""
+
     if [[ $1 -ne 0 ]]; then
         scale=$1
     fi
@@ -48,10 +50,11 @@ rainbow () {
             crf2=""
         fi
 
-        echo -ne "\e[38;2;${crf}${crf2};${cgf};${cbf}m█"
+        final+="\e[38;2;${crf}${crf2};${cgf};${cbf}m█"
 
         x=$((x + 1))
     done
+    echo -ne $final
     echo -en "\e[0m"
 }
 
