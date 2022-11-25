@@ -4,7 +4,9 @@ round () {
     printf "%.${2:-0}f" "$1"
 }
 
-calc() { awk "BEGIN{ printf \"%.2f\n\", $* }"; }
+calc() {
+    awk "BEGIN{ printf \"%.2f\n\", $* }" &
+}
 
 rainbow () {
     scale=1
@@ -24,7 +26,7 @@ rainbow () {
     while [[ $x -lt $(echo "255/$scale" | bc) ]]; do
         divisorf="$(calc $divisor/$scale)"
 
-        cr=$(echo  "(-(($x-(020/$scale))^2)/$(calc $divisorf/$scale))+255" | bc)
+        cr=$(echo  "(-(($x-(008/$scale))^2)/$(calc $divisorf/$scale))+255" | bc)
         cg=$(echo  "(-(($x-(085/$scale))^2)/$(calc $divisorf/$scale))+255" | bc)
         cb=$(echo  "(-(($x-(170/$scale))^2)/$(calc $divisorf/$scale))+255" | bc)
         cr2=$(echo "(-(($x-(255/$scale))^2)/$(calc $divisorf/$scale))+255" | bc)
