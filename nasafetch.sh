@@ -16,14 +16,14 @@ usage() { echo -e "\033[32;4mUsage:\033[0m
    By default gets latest image link.
 
 \033[32;4mOptions:\033[0m
-  -D [YYMMDD]   : Get image from <date>
-  -d            : Get description
-  -k            : Output original page link
-  -l [link]     : Direct link to APOD page
-  -o [filename] : Output image to file (filename optional)
-  -O [filename] : Output description to file
-  -s            : Silent. Surpress fancy headers.
-  -v            : Output version" 1>&2;
+  \033[35m-D [YYMMDD]   \033[0m: \033[34mGet image from <date>\033[0m
+  \033[35m-d            \033[0m: \033[34mGet description\033[0m
+  \033[35m-k            \033[0m: \033[34mOutput original page link\033[0m
+  \033[35m-l [link]     \033[0m: \033[34mDirect link to APOD page\033[0m
+  \033[35m-o [filename] \033[0m: \033[34mOutput image to file (filename optional)\033[0m
+  \033[35m-O [filename] \033[0m: \033[34mOutput description to file\033[0m
+  \033[35m-s            \033[0m: \033[34mSilent. Surpress fancy headers.\033[0m
+  \033[35m-v            \033[0m: \033[34mOutput version\033[0m" 1>&2;
   exit 1;
 }
 
